@@ -1,0 +1,24 @@
+{
+    "name": "orbitale/easyimpress-bundle",
+    "description": "Symfony Bundle to create presentations with Impress.js",
+    "keywords": ["symfony", "bundle", "presentation", "impress", "slides"],
+    "type": "symfony-bundle",
+    "autoload": {
+        "psr-4": {
+            "Orbitale\\Bundle\\EasyImpressBundle\\": ""
+        }
+    },
+    "require": {
+        "php": "^5.5|^7.0",
+        "symfony/framework-bundle": "^3.0",
+        "symfony/twig-bundle": "^3.0",
+        "doctrine/collections": "^1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Rock Ancelet",
+            "email": "pierstoval@gmail.com"
+        }
+    ]
+}

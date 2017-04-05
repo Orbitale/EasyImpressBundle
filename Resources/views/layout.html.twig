@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Orbitale EasyImpress">
+    <meta name="description" content="An EasyImpress portfolion example with Orbitale EasyImpressBundle">
+    <meta name="author" content='Alex "Pierstoval" Rock Ancelet <pierstoval@gmail.com>'>
+
+    {% block favicons %}
+        <link rel="apple-touch-icon-precomposed" href="{{ asset('bundles/easyimpress/img/favicon.ico') }}">
+        <link rel="icon" href="{{ asset('bundles/easyimpress/img/favicon.ico') }}">
+        <link rel="shortcut icon" href="{{ asset('bundles/easyimpress/img/favicon.ico') }}">
+    {% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <meta property="og:title" content="My Impress porfolio by Pierstoval">
+
+    {% block stylesheets %}
+        <link href="{{ asset('bundles/easyimpress/css/bootstrap.min.css') }}" rel="stylesheet">
+    {% endblock %}
+
+    <script src="{{ asset('bundles/easyimpress/js/ie10-viewport-bug-workaround.js') }}" type="text/javascript"></script>
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+
+{% block easy_impress_presentation %}{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/easyimpress/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('bundles/easyimpress/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/easyimpress/js/jquery.transit.min.js') }}"></script>
+{% endblock %}
+</body>
+</html>
