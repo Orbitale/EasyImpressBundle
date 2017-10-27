@@ -13,7 +13,7 @@ namespace Orbitale\Bundle\EasyImpressBundle\Controller;
 
 use Orbitale\Bundle\EasyImpressBundle\Impress\EasyImpress;
 use Orbitale\Bundle\EasyImpressBundle\Model\Presentation;
-use Symfony\Bundle\TwigBundle\TwigEngine;
+use Twig\Environment;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -25,7 +25,7 @@ class PresentationController
     private $impress;
 
     /**
-     * @var TwigEngine
+     * @var Environment
      */
     private $twig;
 
@@ -34,7 +34,7 @@ class PresentationController
      */
     private $layout;
 
-    public function __construct($layout, EasyImpress $impress, TwigEngine $twig)
+    public function __construct($layout, EasyImpress $impress, Environment $twig)
     {
         $this->impress = $impress;
         $this->twig = $twig;
@@ -55,9 +55,9 @@ class PresentationController
             throw new NotFoundHttpException('Presentation "'.$presentationName.'" not found.');
         }
 
-        return $this->twig->renderResponse('@EasyImpress/presentation.html.twig', [
+        return new Response($this->twig->render('@EasyImpress/presentation.html.twig', [
             'layout'       => $this->layout,
             'presentation' => $presentation,
-        ]);
+        ]));
     }
 }
