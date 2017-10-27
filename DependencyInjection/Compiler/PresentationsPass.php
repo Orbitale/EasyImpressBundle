@@ -25,7 +25,7 @@ class PresentationsPass implements CompilerPassInterface
         foreach ($finder as $file) {
             /** @var \SplFileInfo $file */
             $container->addResource(new FileResource($file->getRealPath()));
-            $presentations[$file->getBasename('.yml')] = $configProcessor->processConfigurationFile($file);
+            $presentations[preg_replace('~\.ya?ml$~', '', $file->getBasename())] = $configProcessor->processConfigurationFile($file);
         }
 
         $container->setParameter('easy_impress.presentations', $presentations);

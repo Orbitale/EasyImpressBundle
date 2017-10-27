@@ -26,7 +26,7 @@ class ConfigProcessor
         $yamlArray = Yaml::parse(file_get_contents($file));
 
         // Presentation name based on the file name.
-        $yamlArray['name'] = basename($file, '.yml');
+        $yamlArray['name'] = preg_replace('~\.ya?ml$~', '', basename($file));
 
         $processor = new Processor();
 
