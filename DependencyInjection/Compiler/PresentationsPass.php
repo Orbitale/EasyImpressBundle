@@ -14,7 +14,7 @@ class PresentationsPass implements CompilerPassInterface
     {
         $finder = (new Finder())
             ->files()
-            ->name('*.yml')
+            ->name('*.{yaml,yml}')
             ->in($container->getParameter('easy_impress.presentations_dir'))
         ;
 
