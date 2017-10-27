@@ -15,7 +15,10 @@ With EasyImpressBundle, you can create presentations based on a single `yml` con
 
 # Installation
 
-* Install the bundle
+* Install the bundle:
+   ```shell
+   $ composer require orbitale/easyimpress-bundle
+   ```
 * Add it to your Kernel:
     ```php
     <?php
